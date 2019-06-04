@@ -1,4 +1,4 @@
 language: bash
 script:
 - echo hello
-- echo Travis CI test in .travis.yml - ./same-test.sh
+- echo Travis CI test in .travis.yml - ./19745123.sh
