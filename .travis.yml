@@ -3,4 +3,4 @@ script:
       
 - echo hello
 - echo Travis CI test in .travis.yml 
-- ./19745123.sh
+- ./19745123-test.sh

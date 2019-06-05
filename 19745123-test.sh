@@ -1,9 +1,11 @@
 #!/bin/sh
 
-echo $1 $2 |
-awk '{
-while($1*$2!=0){
-	if($1>$2){$1=$1-$2}
-	else{$2=$2-$1}print}}' |
-awk 'END{print $1}'
+tmp=/tmp/$$
+echo "input 2 argments" > $tmp-args
+echo "input natural number" > $tmp-nat
 
+ERROR_EXIT () { echo "$1" >&2 rm -f $tmp-* exit 1
+}
+
+./19745123.sh 2> $tmp-ans && ERROR_EXIT "error in test1-1" 
+diff $tmp-ans $tmp-args || ERROR_EXIT "error in test1-2"
